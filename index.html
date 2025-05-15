@@ -1,0 +1,314 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>နန်းမူးဟီးသူး - ကိုယ်ရေးအကျဉ်း</title>
+    <style>
+        :root {
+            --primary-green: #2e7d32;
+            --light-green: #81c784;
+            --dark-green: #1b5e20;
+            --background: #f1f8e9;
+            --text-dark: #263238;
+            --text-light: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pyidaungsu', 'Noto Sans Myanmar', sans-serif;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary-green);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(90deg, var(--light-green), var(--dark-green));
+        }
+        
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--light-green);
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--light-green);
+        }
+        
+        h2 {
+            color: var(--dark-green);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2 i {
+            margin-right: 10px;
+            color: var(--primary-green);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .info-card {
+            background-color: var(--background);
+            padding: 1.5rem;
+            border-radius: 6px;
+            transition: transform 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-card h3 {
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .hobbies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .hobby {
+            background-color: var(--light-green);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 6px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 1.5rem;
+            background-color: var(--background);
+            border-left: 4px solid var(--primary-green);
+            margin: 1.5rem 0;
+            position: relative;
+        }
+        
+        .quote::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            color: var(--light-green);
+            opacity: 0.3;
+        }
+        
+        footer {
+            background-color: var(--dark-green);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--light-green);
+        }
+        
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
+        <h1>နန်းမူးဟီးသူး</h1>
+        <p class="tagline">Grade 11 ကျောင်းသူ | ပါဠိကေတုဆုရရှိသူ | PEDU Blood ပရောဂျက်</p>
+    </header>
+    
+    <div class="container">
+        <section id="about">
+            <h2><i class="fas fa-user"></i> ကိုယ်ရေးအကျဉ်း</h2>
+            <p>မင်္ဂလာပါ! ကျွန်မနာမည်ကနန်းမူးဟီးသူးပါ။ အသက် ၁၇ နှစ်ရှိပါပြီ။ ကရင်ပြည်နယ်၊ ဘားအံမြို့နယ်၊ တောင်ကလေးရွာက တောင်ကလေးဘုန်းတော်ကြီးသင်ပညာရေးကျောင်းမှာ Grade 11 တက်ရောက်နေပါတယ်။</p>
+            
+            <div class="quote">
+                အတန်းစာမှာ မြန်မာစာကိုလေ့လာရတာ အရမ်းကြိုက်ပါတယ်။ ကျောင်းမှာ သူငယ်ချင်းတွေနဲ့စာလုပ်ရတာ အရမ်းကိုပျော်ရွှင်ရပါတယ်။ အခြားသူတွေနဲ့သိပ်ပြီးရင်းရင်းနှီးနှီးမနေတတ်ပေမယ့် အနီးနားသူငယ်ချင်းတွေနဲ့ဆိုရင်တော့ စနောက်ရယ်မောပြီး ပျော်ပျော်ရွှင်ရွှင်နေတတ်ပါတယ်။
+            </div>
+            
+            <p>အိမ်မှာဆိုရင် မိဘတွေကိုကူညီပါတယ်။ အကြီးဆုံးသမီးတစ်ယောက်ဖြစ်တာမို့ အိမ်မှုကိစ္စအစစအရာရာကိုဆောင်ရွက်ရပါတယ်။ အလုပ်နဲ့ပတ်သတ်လာရင် သူများခိုင်းတာမဟုတ်ဘဲ ကိုယ့်ဘာသာလုပ်ရတာက ပိုကောင်းတယ်လို့ ခံယူထားပါတယ်။</p>
+        </section>
+        
+        <section id="education">
+            <h2><i class="fas fa-graduation-cap"></i> ပညာရေး</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>ကျောင်း</h3>
+                    <p>တောင်ကလေးဘုန်းတော်ကြီးသင်ပညာရေးကျောင်း</p>
+                </div>
+                <div class="info-card">
+                    <h3>အတန်း</h3>
+                    <p>Grade 11</p>
+                </div>
+                <div class="info-card">
+                    <h3>ဆုတံဆိပ်</h3>
+                    <p>ပါဠိကေတုဆု</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="hobbies">
+            <h2><i class="fas fa-heart"></i> ဝါသနာနှင့် စိတ်ဝင်စားမှုများ</h2>
+            <div class="hobbies">
+                <span class="hobby"><i class="fas fa-music"></i> သီချင်းနားထောင်ခြင်း</span>
+                <span class="hobby"><i class="fas fa-feather-alt"></i> ကြက်တောင်ရိုက်ခြင်း</span>
+                <span class="hobby"><i class="fas fa-microphone"></i> သီချင်းဆိုခြင်း</span>
+                <span class="hobby"><i class="fas fa-video"></i> ဗီဒီယိုကြည့်ခြင်း</span>
+                <span class="hobby"><i class="fas fa-lightbulb"></i> ဗီဒီယိုမှသင်ခန်းစာယူခြင်း</span>
+            </div>
+            
+            <h3 style="margin-top: 2rem;">ကျွန်မရဲ့ဖန်တီးမှုများ</h3>
+            <p>ဗီဒီယိုတွေကနေသင်ယူရတဲ့အရာတွေကို အသစ်တီထွင်ဖန်တီးရာမှာအသုံးချရတာ အရမ်းကြိုက်ပါတယ်။</p>
+            <div class="info-card" style="margin-top: 1rem;">
+                <h3>PEDU Blood ပရောဂျက်</h3>
+                <p>ကျွန်မတို့ကျေးရွာမှာ သွေးလှူဒါန်းမှုနဲ့ပတ်သက်တဲ့ အသိပညာပေးရေးနဲ့ ညှိနှိုင်းဆောင်ရွက်ပေးတဲ့ ပရောဂျက်တစ်ခုပါ။</p>
+            </div>
+        </section>
+        
+        <section id="gallery">
+            <h2><i class="fas fa-images"></i> ကျွန်မဘဝမှတ်တမ်းဓာတ်ပုံများ</h2>
+            <div class="gallery">
+                <img src="https://source.unsplash.com/random/300x200/?school" alt="ကျောင်း">
+                <img src="https://source.unsplash.com/random/300x200/?village" alt="ကျေးရွာ">
+                <img src="https://source.unsplash.com/random/300x200/?badminton" alt="ကြက်တောင်ရိုက်">
+                <img src="https://source.unsplash.com/random/300x200/?study" alt="စာလုပ်">
+                <img src="https://source.unsplash.com/random/300x200/?family" alt="မိသားစု">
+                <img src="https://source.unsplash.com/random/300x200/?burma" alt="မြန်မာနိုင်ငံ">
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>ဆက်သွယ်ရန်</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <p style="margin-top: 1rem;">&copy; ၂၀၂၃ နန်းမူးဟီးသူး။ မူပိုင်ခွင့်အားလုံးရှိပါသည်။</p>
+    </footer>
+
+    <script>
+        // Simple animation for gallery images
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.gallery img');
+            
+            images.forEach((img, index) => {
+                // Add slight delay to each image for staggered animation
+                img.style.transitionDelay = `${index * 0.1}s`;
+            });
+            
+            // Change header background on scroll
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                const scrollPosition = window.scrollY;
+                
+                if (scrollPosition > 50) {
+                    header.style.background = `linear-gradient(135deg, var(--dark-green), var(--primary-green))`;
+                } else {
+                    header.style.background = `var(--primary-green)`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
